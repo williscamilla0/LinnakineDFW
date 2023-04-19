@@ -6,7 +6,6 @@
 """
 
 import os
-from collections import OrderedDict
 
 from minigpt4.datasets.datasets.base_dataset import BaseDataset
 from PIL import Image
@@ -61,7 +60,6 @@ class CaptionDataset(BaseDataset, __DisplMixin):
 
 
 class CaptionEvalDataset(BaseDataset, __DisplMixin):
-    def __init__(self, vis_processor, text_processor, vis_root, ann_paths):
         """
         vis_root (string): Root directory of images (e.g. coco/images/)
         ann_root (string): directory to store the annotation file
@@ -80,6 +78,5 @@ class CaptionEvalDataset(BaseDataset, __DisplMixin):
 
         return {
             "image": image,
-            "image_id": ann["image_id"],
             "instance_id": ann["instance_id"],
         }
